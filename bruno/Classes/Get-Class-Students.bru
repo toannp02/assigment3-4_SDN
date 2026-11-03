@@ -1,0 +1,19 @@
+meta {
+  name: Get Class Students
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/classes/{{classId}}/students
+  body: none
+  auth: none
+}
+
+params:query {
+  status: enrolled
+}
+
+headers {
+  Authorization: Bearer {{token}}
+}

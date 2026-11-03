@@ -1,0 +1,15 @@
+meta {
+  name: Get Attendance Summary
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/classes/{{classId}}/attendances-summary
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{token}}
+}

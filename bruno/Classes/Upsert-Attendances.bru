@@ -1,0 +1,31 @@
+meta {
+  name: Upsert Class Attendances
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/classes/{{classId}}/attendances
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{token}}
+}
+
+body:json {
+  {
+    "date": "2026-11-02",
+    "records": [
+      {
+        "studentId": "{{studentId}}",
+        "status": "PRESENT"
+      },
+      {
+        "studentId": "{{secondStudentId}}",
+        "status": "ABSENT"
+      }
+    ]
+  }
+}
